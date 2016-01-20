@@ -1,0 +1,41 @@
+.container{
+	width: 740px;
+	height: 740px;
+	border: 2px solid black;
+	margin: 0 auto;
+	background-color:#f5f6ce;
+}
+
+.board-sq{
+	width:55px;
+	height: 55px;
+	border: 2px solid green;
+	margin: 3px;
+}
+.board-sq-rt{
+	float: right;
+}
+img{
+	
+    width: 200px;
+    height:auto;
+    margin-top: 50px;
+    display:block;
+}
+#roll-val0{
+	position: relative;
+	font-size: 1.75em;
+	font-weight:bold;
+	bottom: 128px ;
+	align-content: center;
+	margin-top: 3%;
+	margin-left: 12%
+}
+
+#r0c0{
+	background-color:#F7D356;
+	text-align: center;
+}
+.play-mov{
+	background-color: crimson;
+}
