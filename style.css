@@ -15,11 +15,13 @@
 .board-sq-rt{
 	float: right;
 }
-img{
-	
-    width: 200px;
+.dice0{
+	position:absolute;
+	top: 0;
+	left:0:
+    width: 120px;
     height:auto;
-    margin-top: 50px;
+  
     display:block;
 }
 #roll-val0{
@@ -28,14 +30,22 @@ img{
 	font-weight:bold;
 	bottom: 128px ;
 	align-content: center;
-	margin-top: 3%;
-	margin-left: 12%
+	
+	margin-left: 36%
+	
 }
 
 #r0c0{
 	background-color:#F7D356;
 	text-align: center;
 }
-.play-mov{
-	background-color: crimson;
+#player1{
+	margin:0;
+	z-index: 10;
+	width: 25px;
+	height: 25px;
+}
+
+#player1{
+	transition: all 2s ease-in-out;
 }
