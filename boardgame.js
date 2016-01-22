@@ -40,7 +40,7 @@ virtDie0.onclick=function(){
 	//console.log(faceValue);
 	
 	var base = 60;
-	
+	var yMax = 660;
     position1 = position1 + faceValue;
 	if ( position1 <= 11 ) {
 		
@@ -51,13 +51,21 @@ virtDie0.onclick=function(){
 	}
 	else if (position1 <= 33){
 		var transformStr = "translate(" +  ( -(position1-33) )* base + "px, 660px)";
-		console.log("position1: "+position1);
-		console.log(transformStr);
+		//console.log("position1: "+position1);
+		//console.log(transformStr);
 		$("#player1").css("transform", transformStr );
 	}
 	else{
-		//var transformStr = "translate(0px," +  Math.ceil(660-position1-43) + "px)";
-		var newpos = Math.abs(660-( Math.abs(position1-44) * base) );
+		
+		if ( position1 >= 44 ) position1 = 44;
+		
+		console.log("position1: "+position1);
+		var newpos =  Math.abs( (44-position1) * base );
+		/*if ((newpos <= 0) || newpos === 660) {
+			newpos = 0;
+		} */
+		
+		console.log("new pos: "+newpos);
 		var transformStr = "translate(0px," +  newpos + "px)";
 		console.log(transformStr);
 		$("#player1").css("transform", transformStr );

@@ -40,12 +40,26 @@
 	text-align: center;
 }
 #player1{
-	margin:0;
+	
+	position: absolute;
+	bottom: 5px; 
 	z-index: 10;
 	width: 25px;
 	height: 25px;
 }
 
 #player1{
+	transition: all 2s ease-in-out;
+}
+#player2{
+	
+	position: absolute;
+	bottom: 31px; 
+	z-index: 10;
+	width: 25px;
+	height: 25px;
+}
+
+#player2{
 	transition: all 2s ease-in-out;
 }
