@@ -27,6 +27,7 @@ function displayDiceRoll(iDice,iDieFace,iRollVal){
        	
 }
 
+
 function movePlayer(iPlayer, inPos){
 	var base = 60; 
 	var iPosition = inPos;
@@ -54,23 +55,32 @@ function movePlayer(iPlayer, inPos){
 		
 	    transformStr = "translate(0px," +  newpos + "px)";
 		console.log(transformStr);
-		$("#player1").css("transform", transformStr );
+		$(playerId).css("transform", transformStr );
+		
+		if (newpos === 0){
+			$("#message").html("Game Over. "+ playerId+" is the winner!!!");
+		}
 	} 
 }
 
-var faceValue = 0;
+
+var position1 = 0, position2=0,playerTurn=1,faceValue=0;
+$("#message").html("");  
+
+// Begin
+var gameTitle = document.getElementById("game-title");
+
 var virtDie0 = document.getElementById("anim-die0");
 var dieFace0 = document.getElementById("roll-val0");
-// for start
 
-var position1 = 0;
-var position2 = 0;
-var playerTurn = 1;
+gameTitle.style.left = window.innerWidth/2 - 150 + "px";
+
 virtDie0.onclick=function(){
     faceValue = dieRoll();	
 	displayDiceRoll(virtDie0,dieFace0,faceValue); 
-	//console.log(faceValue);
 	
+	
+	console.log("current player turn:"+playerTurn);
 	switch (playerTurn) {
 		case 1:
 		    position1 = position1 + faceValue;
@@ -85,11 +95,10 @@ virtDie0.onclick=function(){
 			
 	}
 	
-   	
+   	console.log("Player on deck: "+ playerTurn);
+
 		
-	
-	
-	
+		
 };
 
 
