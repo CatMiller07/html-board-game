@@ -69,20 +69,22 @@ body{
 }
 #message{
 	margin-top: 30px;
-	width: 350px;
+	width: 400px;
     font-family: 'Signika', sans-serif;
 	font-size: 1.5em;
 	font-weight: 600;
 	color: blue;
+    text-align: center;
 	text-decoration: blink;
 }
 #game-title{
+    padding-left:29px;
 	position: absolute;
 	width: 350px;
 	height: 60px;
-	font-size: 2.5em;
+	font-size: 3.25em;
 	transform: rotate(45deg);
-	bottom: 500px;
+	bottom: 516px;
 	left: 375px;
 	background-color:#F7D356;
 	border: 1px solid black;
