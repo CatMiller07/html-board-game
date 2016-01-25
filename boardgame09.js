@@ -28,10 +28,10 @@ function displayDiceRoll(iDice,iDieFace,iRollVal){
 }
 
 
-function movePlayer(iPlayer, inPos){
+function movePlayer(iPlayer, inPos, inGameOver){
 	var base = 60; 
 	var iPosition = inPos;
-	var playerId = "#player"+iPlayer;
+    var playerId = "#player"+iPlayer;
 	
 	if ( iPosition <= 11 ) {
 		
@@ -57,7 +57,8 @@ function movePlayer(iPlayer, inPos){
 		console.log(transformStr);
 		$(playerId).css("transform", transformStr );
 		
-		if (newpos === 0){
+		if (newpos === 0 && inGameOver ){
+            inGameOver = false;
 			$("#message").html("Game Over. "+ playerId+" is the winner!!!");
 		}
 	} 
@@ -65,6 +66,9 @@ function movePlayer(iPlayer, inPos){
 
 
 var position1 = 0, position2=0,playerTurn=1,faceValue=0;
+var do_1x = true;
+
+
 $("#message").html("");  
 
 // Begin
@@ -84,12 +88,12 @@ virtDie0.onclick=function(){
 	switch (playerTurn) {
 		case 1:
 		    position1 = position1 + faceValue;
-			movePlayer(playerTurn,position1);
+			movePlayer(playerTurn,position1,do_1x);
 			playerTurn  = 2;
 		 break;
 		case 2:
 		    position2 = position2 + faceValue;
-			movePlayer(playerTurn,position2);
+			movePlayer(playerTurn,position2, do_1x);
 			playerTurn  = 1;
 		 break;	
 			

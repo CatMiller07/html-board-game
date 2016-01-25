@@ -56,7 +56,7 @@ body{
 	transition: all 2s ease-in-out;
 }
 #player2{
-	
+	top: 5px;
 	position: absolute;
 	bottom: 31px; 
 	z-index: 10;
@@ -78,14 +78,15 @@ body{
 	text-decoration: blink;
 }
 #game-title{
-    padding-left:29px;
+    
 	position: absolute;
 	width: 350px;
 	height: 60px;
 	font-size: 3.25em;
 	transform: rotate(45deg);
-	bottom: 516px;
-	left: 375px;
+	bottom: 536px;
+	left: 775px;
 	background-color:#F7D356;
 	border: 1px solid black;
+    padding-left:29px;
 }
