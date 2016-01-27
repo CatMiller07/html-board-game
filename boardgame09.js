@@ -28,7 +28,7 @@ function displayDiceRoll(iDice,iDieFace,iRollVal){
 }
 
 
-function movePlayer(iPlayer, inPos, inGameOver){
+function movePlayer(iPlayer, inPos, isGameOver){
 	var base = 60; 
 	var iPosition = inPos;
     var playerId = "#player"+iPlayer;
@@ -57,16 +57,19 @@ function movePlayer(iPlayer, inPos, inGameOver){
 		console.log(transformStr);
 		$(playerId).css("transform", transformStr );
 		
-		if (newpos === 0 && inGameOver ){
-            inGameOver = false;
+	    console.log("game over flag:" + isGameOver);	
+		if (newpos === 0 && !isGameOver ){
+            isGameOver = true;
 			$("#message").html("Game Over. "+ playerId+" is the winner!!!");
 		}
-	} 
+	}
+	
+	return isGameOver;
 }
 
 
 var position1 = 0, position2=0,playerTurn=1,faceValue=0;
-var do_1x = true;
+var gameOver = false;
 
 
 $("#message").html("");  
@@ -88,12 +91,12 @@ virtDie0.onclick=function(){
 	switch (playerTurn) {
 		case 1:
 		    position1 = position1 + faceValue;
-			movePlayer(playerTurn,position1,do_1x);
+			movePlayer(playerTurn,position1,gameOver);
 			playerTurn  = 2;
 		 break;
 		case 2:
 		    position2 = position2 + faceValue;
-			movePlayer(playerTurn,position2, do_1x);
+			movePlayer(playerTurn,position2, gameOver);
 			playerTurn  = 1;
 		 break;	
 			
@@ -105,7 +108,9 @@ virtDie0.onclick=function(){
 		
 };
 
-
+$("#reset-btn").on("click",function(){
+	location.reload(); 
+})
 
 
 	
