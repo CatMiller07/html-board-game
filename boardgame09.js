@@ -15,11 +15,11 @@ function displayDiceRoll(iDice,iDieFace,iRollVal){
 	
     //console.log("here i am");
 	
-   iDice.src = "Dodecahedron.gif";
+   iDice.src = "Dodecahedron_.gif";
    //faceValue = dieRoll();
 	
    setTimeout(function(){
-	    iDice.src = "dodecahedron-frame1.png";
+	    iDice.src = "dodecahedron-frame_1.png";
     	iDieFace.innerHTML = iRollVal;     			
 		},1000);
    
